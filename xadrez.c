@@ -1,11 +1,9 @@
 #include <stdio.h>
-int main() {
- printf("Desafio Xadrez");
- 
-const int Bispo_Passos = 5;
-const int Torre_Passos = 5;
-const int Rainha_Passos = 8;
- int main (){
+
+int main (){
+int Bispo_Passos = 5;
+int Torre_Passos = 5;
+int Rainha_Passos = 8; 
 
     printf("Movimentacao do Bispo:\n");
     for (int i = 1; i<= Bispo_Passos; i++){

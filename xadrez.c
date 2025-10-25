@@ -1,51 +1,76 @@
 #include <stdio.h>
 
-#define TAM 10   // Tamanho do tabuleiro (10x10)
-#define NAVIO 3  // Valor que representa as partes do navio
-#define AGUA 0   // Valor que representa a água
-
 int main() {
-    int tabuleiro[TAM][TAM]; // Matriz 10x10 para representar o tabuleiro
-    int i, j;
+    // Carta 1
+    char estado1;
+    char codigo1[4];
+    char cidade1[50];
+    int populacao1;
+    int area1;
+    float pib1;
+    int pontos_turisticos1;
 
-    // 1. Inicializa todas as posições do tabuleiro com 0 (água)
-    for (i = 0; i < TAM; i++) {
-        for (j = 0; j < TAM; j++) {
-            tabuleiro[i][j] = AGUA;
-        }
-    }
+    // Carta 2
+    char estado2;
+    char codigo2[4];
+    char cidade2[50];
+    int populacao2;
+    int area2;
+    float pib2;
+    int pontos_turisticos2;
 
-    // 2. Posiciona os navios (tamanho fixo = 3)
-    // As coordenadas foram definidas diretamente no código conforme as simplificações
+    // Leitura da carta 1
+    printf("Digite os dados da Carta 1:\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &estado1);
+    printf("Código da carta: ");
+    scanf("%s", codigo1);
+    printf("Nome da cidade: ");
+    scanf(" %[^\n]", cidade1);
+    printf("População: ");
+    scanf("%d", &populacao1);
+    printf("Área em km²: ");
+    scanf("%d", &area1);
+    printf("PIB: ");
+    scanf("%f", &pib1);
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &pontos_turisticos1);
 
-    // Navio 1 - horizontal
-    int linha1 = 2, coluna1 = 4;
-    for (j = coluna1; j < coluna1 + 3; j++) {
-        tabuleiro[linha1][j] = NAVIO;
-    }
+    // Leitura da carta 2
+    printf("\nDigite os dados da Carta 2:\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &estado2);
+    printf("Código da carta: ");
+    scanf("%s", codigo2);
+    printf("Nome da cidade: ");
+    scanf(" %[^\n]", cidade2);
+    printf("População: ");
+    scanf("%d", &populacao2);
+    printf("Área em km²: ");
+    scanf("%d", &area2);
+    printf("PIB: ");
+    scanf("%f", &pib2);
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &pontos_turisticos2);
 
-    // Navio 2 - vertical
-    int linha2 = 5, coluna2 = 7;
-    for (i = linha2; i < linha2 + 3; i++) {
-        tabuleiro[i][coluna2] = NAVIO;
-    }
+    // Exibição das cartas
+    printf("\n--- Carta 1 ---\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Cidade: %s\n", cidade1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %d km²\n", area1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Pontos turísticos: %d\n", pontos_turisticos1);
 
-    // Navio 3 - horizontal
-    int linha3 = 8, coluna3 = 1;
-    for (j = coluna3; j < coluna3 + 3; j++) {
-        tabuleiro[linha3][j] = NAVIO;
-    }
-
-    // 3. Exibe o tabuleiro no console
-    printf("=== TABULEIRO DE BATALHA NAVAL ===\n\n");
-    for (i = 0; i < TAM; i++) {
-        for (j = 0; j < TAM; j++) {
-            printf("%d ", tabuleiro[i][j]); // Mostra cada posição separada por espaço
-        }
-        printf("\n"); // Quebra de linha a cada linha da matriz
-    }
-
-    printf("\nLegenda: 0 = Água | 3 = Navio\n");
+    printf("\n--- Carta 2 ---\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Cidade: %s\n", cidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %d km²\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Pontos turísticos: %d\n", pontos_turisticos2);
 
     return 0;
 }
